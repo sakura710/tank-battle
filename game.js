@@ -98,7 +98,7 @@ function createObstacles() {
 // Create enemies
 function createEnemies() {
     enemies = [];
-    const enemyCount = 3 + level; // Increase enemies with level
+    const enemyCount = 2 + level; // Increase enemies with level
 
     for (let i = 0; i < enemyCount; i++) {
         // Place enemies away from player
@@ -114,12 +114,12 @@ function createEnemies() {
             width: 40,
             height: 40,
             angle: Math.random() * Math.PI * 2,
-            speed: 1 + level * 0.2,
+            speed: 0.8 + level * 0.15,
             color: '#e74c3c',
             lastShot: 0,
-            shotDelay: 1500 + Math.random() * 1000,
+            shotDelay: 2000 + Math.random() * 1500,
             targetAngle: Math.random() * Math.PI * 2,
-            turnSpeed: 0.05
+            turnSpeed: 0.03
         });
     }
 }
@@ -546,7 +546,7 @@ function shoot(x, y, angle, isEnemy) {
         x: x,
         y: y,
         angle: angle,
-        speed: isEnemy ? 7 : 10,
+        speed: isEnemy ? 5 : 10,
         radius: 4,
         color: isEnemy ? '#e74c3c' : '#f1c40f',
         created: Date.now()
