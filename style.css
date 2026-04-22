@@ -1,0 +1,340 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    background: rgba(25, 25, 40, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 1px solid #3498db;
+}
+
+header {
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #3498db;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header h1 i {
+    font-size: 2.2rem;
+}
+
+.game-info {
+    display: flex;
+    gap: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px 25px;
+    border-radius: 15px;
+    border: 2px solid #3498db;
+}
+
+.score-container, .lives-container, .level-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: #95a5a6;
+    font-weight: 600;
+}
+
+#score, #lives, #level {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2ecc71;
+}
+
+#lives {
+    color: #e74c3c;
+}
+
+#level {
+    color: #3498db;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+    background: linear-gradient(90deg, #2980b9, #3498db);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+}
+
+main {
+    padding: 30px;
+}
+
+.game-area {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#gameCanvas {
+    background: #0c0c1a;
+    border-radius: 15px;
+    border: 3px solid #3498db;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    flex: 1;
+    min-width: 300px;
+}
+
+.instructions {
+    background: rgba(30, 30, 50, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #2ecc71;
+    width: 300px;
+}
+
+.instructions h3 {
+    color: #2ecc71;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.controls-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.control-item {
+    background: rgba(52, 152, 219, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.control-item:hover {
+    background: rgba(52, 152, 219, 0.4);
+    transform: translateY(-3px);
+}
+
+.control-item i {
+    font-size: 1.8rem;
+    color: #3498db;
+}
+
+.control-item span {
+    font-weight: 600;
+    color: #ecf0f1;
+}
+
+.game-tip {
+    background: rgba(243, 156, 18, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #f39c12;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #f1c40f;
+    font-weight: 600;
+}
+
+.game-tip i {
+    font-size: 1.5rem;
+}
+
+footer {
+    background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
+    padding: 20px;
+    text-align: center;
+    border-top: 3px solid #3498db;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer p {
+    color: #bdc3c7;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer p i {
+    color: #e74c3c;
+}
+
+.github-link a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+}
+
+.github-link a:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 3px solid #3498db;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+    max-width: 500px;
+    width: 90%;
+}
+
+.modal-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.modal-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #ecf0f1;
+}
+
+#final-score, #level-score {
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .game-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .instructions {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #gameCanvas {
+        width: 100%;
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .game-info {
+        gap: 15px;
+        padding: 10px 15px;
+    }
+
+    .controls-grid {
+        grid-template-columns: 1fr;
+    }
+}
