@@ -146,15 +146,11 @@ function setupEventListeners() {
     document.getElementById('play-again-btn').addEventListener('click', restartGame);
     document.getElementById('next-level-btn').addEventListener('click', nextLevel);
 
-    // Update GitHub link with potential repo
+    // Set GitHub link to actual repository
     const githubLink = document.getElementById('github-link');
-    githubLink.addEventListener('click', (e) => {
-        // If we have a repo URL, use it, otherwise keep default
-        const repoUrl = localStorage.getItem('tankBattleRepoUrl');
-        if (repoUrl) {
-            githubLink.href = repoUrl;
-        }
-    });
+    githubLink.href = 'https://github.com/sakura710/tank-battle';
+    // Also store in localStorage for consistency
+    localStorage.setItem('tankBattleRepoUrl', 'https://github.com/sakura710/tank-battle');
 }
 
 // Toggle pause state
